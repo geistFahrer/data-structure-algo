@@ -128,5 +128,19 @@ public class LinkedList {
         return temp;
     }
 
+    public Node get(int index) {
+        if(index < 0 || index >= length) {
+            System.out.println("Invalid index");
+            return null;
+        }
+        int i = 0;
+        Node node = head;
+        while(i<index) {
+            node = node.next;
+            i++;
+        }
+        return node;
+    }
+
 
 }
