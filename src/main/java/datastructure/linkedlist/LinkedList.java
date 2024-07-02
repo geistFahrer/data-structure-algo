@@ -30,9 +30,10 @@ public class LinkedList {
     public void print() {
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.value + " => ");
+            System.out.print(temp.value + " -> ");
             temp = temp.next;
         }
+        System.out.println("null");
     }
 
     public void getHead() {
@@ -73,9 +74,21 @@ public class LinkedList {
         tail.next = null;
         length--;
 
+        // Length is zero means linked list is empty
         if(length == 0) {
             head = tail = null;
         }
+    }
+
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if(length == 0) {
+            head = tail = newNode;
+        }else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
     }
 
 }
