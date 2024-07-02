@@ -1,16 +1,36 @@
 package main.java.datastructure.linkedlist;
 
+/**
+ * Singly linked list class.
+ */
 public class LinkedList {
+    /**
+     * Node pointing to head of the linked list.
+     */
     private Node head;
+    /**
+     * Node pointing to tail of the linked list.
+     */
     private Node tail;
+    /**
+     * Length of the linked list.
+     */
     private int length;
 
+    /**
+     * Constructor to initiate empty linked list.
+     */
     public LinkedList() {
         this.head = null;
         this.tail = null;
         this.length = 0;
     }
 
+    /**
+     * Constructor to initiate linked list with one element.
+     *
+     * @param value Value of the first node of the linked list.
+     */
     public LinkedList(int value) {
         Node newNode = new Node(value);
         this.head = newNode;
@@ -59,6 +79,7 @@ public class LinkedList {
         tail = newNode;
         length++;
     }
+
     public void removeLast() {
         if (length == 0) {
             return;
@@ -75,20 +96,37 @@ public class LinkedList {
         length--;
 
         // Length is zero means linked list is empty
-        if(length == 0) {
+        if (length == 0) {
             head = tail = null;
         }
     }
 
     public void prepend(int value) {
         Node newNode = new Node(value);
-        if(length == 0) {
+        if (length == 0) {
             head = tail = newNode;
-        }else {
+        } else {
             newNode.next = head;
             head = newNode;
         }
         length++;
     }
+
+    public Node removeFirst() {
+        if(length == 0) {
+            return null;
+        }
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        length--;
+
+        // When linked list has only one element and that is removed then tail should point to null.
+        if(length == 0) {
+            tail = null;
+        }
+        return temp;
+    }
+
 
 }
