@@ -142,5 +142,20 @@ public class LinkedList {
         return node;
     }
 
+    public boolean set(int index, int value) {
+        if(index < 0 || index >= length) {
+            System.out.println("Invalid index");
+            return false;
+        }
+        Node temp = head;
+        int i = 0;
+        while(i < index) {
+            temp = temp.next;
+            i++;
+        }
+        temp.value = value;
+        return true;
+    }
+
 
 }
