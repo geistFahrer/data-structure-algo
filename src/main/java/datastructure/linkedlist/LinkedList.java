@@ -80,9 +80,9 @@ public class LinkedList {
         length++;
     }
 
-    public void removeLast() {
+    public Node removeLast() {
         if (length == 0) {
-            return;
+            return null;
         }
         Node pre, temp;
         pre = head;
@@ -99,6 +99,7 @@ public class LinkedList {
         if (length == 0) {
             head = tail = null;
         }
+        return temp;
     }
 
     public void prepend(int value) {
@@ -174,5 +175,40 @@ public class LinkedList {
         }
         length ++;
         return true;
+    }
+
+    public Node remove(int index) {
+        if(index < 0 || index >= length) {
+            System.out.println("Invalid index.");
+            return null;
+        }
+
+        if(index == 0) {
+            return removeFirst();
+        }
+        if(index == length - 1) {
+            return removeLast();
+        }
+
+        Node pre = get(index - 1);
+        Node nodeToRemove = pre.next;
+        pre.next = nodeToRemove.next;
+        nodeToRemove.next = null;
+        length--;
+        return nodeToRemove;
+    }
+
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node before = null;
+        Node after = null;
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
     }
 }
