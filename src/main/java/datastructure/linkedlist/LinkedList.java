@@ -157,5 +157,22 @@ public class LinkedList {
         return true;
     }
 
-
+    public boolean insert(int index, int value){
+        if(index < 0 || index > length) {
+            System.out.println("Invalid index");
+            return false;
+        }
+        if(index == 0) {
+            prepend(value);
+        } else if(index == length) {
+            append(value);
+        } else {
+            Node temp = get(index-1);
+            Node newNode = new Node(value);
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+        length ++;
+        return true;
+    }
 }

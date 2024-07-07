@@ -8,6 +8,8 @@ public class Main {
         linkedList.append(3);
         linkedList.set(1, 100);
         linkedList.print();
+        linkedList.insert(1, 123);
+        linkedList.print();
 
 
     }
