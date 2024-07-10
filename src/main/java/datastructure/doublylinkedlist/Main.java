@@ -7,6 +7,7 @@ public class Main {
         doublyLinkedList.append(2);
         doublyLinkedList.append(3);
         doublyLinkedList.print();
+
         System.out.println("---------Remove last-----------");
         doublyLinkedList.removeLast();
         doublyLinkedList.print();
@@ -15,6 +16,13 @@ public class Main {
         doublyLinkedList.removeLast();
         doublyLinkedList.print();
         doublyLinkedList.removeLast();
+        doublyLinkedList.print();
+
+        System.out.println("----------Prepend--------------");
+        doublyLinkedList.prepend(1);
+        doublyLinkedList.print();
+        doublyLinkedList.prepend(2);
+        doublyLinkedList.prepend(3);
         doublyLinkedList.print();
     }
 }
