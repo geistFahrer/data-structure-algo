@@ -24,9 +24,9 @@ public class DoublyLinkedList {
 
     public void print() {
         Node temp = head;
-        while(temp != null) {
+        while (temp != null) {
             System.out.print(temp.value);
-            if (temp.next !=null) {
+            if (temp.next != null) {
                 System.out.print(" -> ");
             }
             temp = temp.next;
@@ -45,6 +45,21 @@ public class DoublyLinkedList {
             tail = newNode;
         }
         length++;
+    }
+
+    public Node removeLast() {
+        if (length == 0) return null;
+        Node temp = tail;
+        if (length == 1) {
+            head = null;
+            tail = null;
+        } else {
+            tail = temp.prev;
+            tail.next = null;
+            temp.prev = null;
+        }
+        length--;
+        return temp;
     }
 
 
