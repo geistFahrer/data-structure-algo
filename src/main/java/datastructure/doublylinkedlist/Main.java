@@ -57,6 +57,17 @@ public class Main {
         doublyLinkedList.print();
         doublyLinkedList.set(3, 101);
         doublyLinkedList.print();
-    }
 
+        System.out.println("----------Set element at index--------------");
+        doublyLinkedList = new DoublyLinkedList(1);
+        doublyLinkedList.insert(0, 101);
+        doublyLinkedList.print();
+        doublyLinkedList.insert(2, 101);
+        doublyLinkedList.print();
+        doublyLinkedList.insert(2, 102);
+        doublyLinkedList.print();
+        doublyLinkedList.insert(2, 105);
+        doublyLinkedList.print();
+    }
 }
+

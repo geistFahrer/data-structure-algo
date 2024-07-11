@@ -119,4 +119,26 @@ public class DoublyLinkedList {
         temp.value = value;
         return true;
    }
+
+    public boolean insert(int index, int value) {
+        if(index < 0 || index>length) {
+            System.out.println("Invalid index");
+            return false;
+        }
+        Node newNode = new Node(value);
+        if(index == 0) {
+            prepend(value);
+        }else if(index == length) {
+            append(value);
+        }else {
+            Node before = get(index - 1);
+            Node after = before.next;
+            newNode.next = after;
+            newNode.prev = before;
+            before.next = newNode;
+            after.prev = newNode;
+            length++;
+        }
+        return true;
+    }
 }
