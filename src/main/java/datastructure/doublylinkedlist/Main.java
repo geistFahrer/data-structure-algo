@@ -52,6 +52,11 @@ public class Main {
         System.out.println("Node value at index 1 : " + node.value);
         doublyLinkedList.get(-1);
         doublyLinkedList.get(4);
+
+        System.out.println("----------Set element at index--------------");
+        doublyLinkedList.print();
+        doublyLinkedList.set(3, 101);
+        doublyLinkedList.print();
     }
 
 }
