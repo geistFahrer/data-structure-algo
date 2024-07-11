@@ -91,4 +91,23 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    public Node get(int index) {
+        if( index < 0 || index >= length) {
+            System.out.println("Invalid index");
+            return null;
+        }
+        int mid = length/2;
+        Node temp = head;
+        if(index <= mid) {
+            for(int i = 0; i<index; i++) {
+                temp = temp.next;
+            }
+        }else {
+            temp = tail;
+            for(int i = length-1; i>index; i--) {
+                temp = temp.prev;
+            }
+        }
+        return temp;
+    }
 }

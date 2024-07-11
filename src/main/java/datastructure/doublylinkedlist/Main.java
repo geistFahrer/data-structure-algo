@@ -34,5 +34,24 @@ public class Main {
         doublyLinkedList.print();
         doublyLinkedList.removeFirst();
         doublyLinkedList.print();
+
+        System.out.println("----------Get element by index--------------");
+        doublyLinkedList.append(1);
+        doublyLinkedList.append(12);
+        doublyLinkedList.append(4);
+        doublyLinkedList.append(56);
+        doublyLinkedList.append(5);
+        doublyLinkedList.print();
+        DoublyLinkedList.Node node = doublyLinkedList.get(0);
+        System.out.println("Node value at index 0 : " + node.value);
+        node = doublyLinkedList.get(3);
+        System.out.println("Node value at index 3 : " + node.value);
+        node = doublyLinkedList.get(2);
+        System.out.println("Node value at index 2 : " + node.value);
+        node = doublyLinkedList.get(1);
+        System.out.println("Node value at index 1 : " + node.value);
+        doublyLinkedList.get(-1);
+        doublyLinkedList.get(4);
     }
+
 }
