@@ -24,5 +24,15 @@ public class Main {
         doublyLinkedList.prepend(2);
         doublyLinkedList.prepend(3);
         doublyLinkedList.print();
+
+        System.out.println("----------Remove first--------------");
+        doublyLinkedList.removeFirst();
+        doublyLinkedList.print();
+        doublyLinkedList.removeFirst();
+        doublyLinkedList.print();
+        doublyLinkedList.removeFirst();
+        doublyLinkedList.print();
+        doublyLinkedList.removeFirst();
+        doublyLinkedList.print();
     }
 }
