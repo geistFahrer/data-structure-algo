@@ -68,6 +68,16 @@ public class Main {
         doublyLinkedList.print();
         doublyLinkedList.insert(2, 105);
         doublyLinkedList.print();
+
+        System.out.println("Remove element at given index");
+        doublyLinkedList.remove(0);
+        doublyLinkedList.print();
+        doublyLinkedList.remove(3);
+        doublyLinkedList.print();
+        doublyLinkedList.insert(2, 106);
+        doublyLinkedList.print();
+        doublyLinkedList.remove(1);
+        doublyLinkedList.print();
     }
 }
 
